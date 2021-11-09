@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040A7CA827394957000E08EB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 040A7CA727394957000E08EB /* main.c */; };
 		040A7CC0273A17F9000E08EB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 040A7CBF273A17F9000E08EB /* main.c */; };
+		040A7CCB273A201A000E08EB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 040A7CCA273A201A000E08EB /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		040A7CC6273A201A000E08EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +57,8 @@
 		040A7CB227394A70000E08EB /* 1、线性表 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "1、线性表"; sourceTree = BUILT_PRODUCTS_DIR; };
 		040A7CBD273A17F9000E08EB /* 线性表-顺序存储结构 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "线性表-顺序存储结构"; sourceTree = BUILT_PRODUCTS_DIR; };
 		040A7CBF273A17F9000E08EB /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		040A7CC8273A201A000E08EB /* 线性表-链式存储结构 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "线性表-链式存储结构"; sourceTree = BUILT_PRODUCTS_DIR; };
+		040A7CCA273A201A000E08EB /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		040A7CC5273A201A000E08EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +98,7 @@
 			children = (
 				040A7CA627394957000E08EB /* 数据结构 */,
 				040A7CBE273A17F9000E08EB /* 线性表-顺序存储结构 */,
+				040A7CC9273A201A000E08EB /* 线性表-链式存储结构 */,
 				040A7CA527394957000E08EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +109,7 @@
 				040A7CA427394957000E08EB /* 数据结构 */,
 				040A7CB227394A70000E08EB /* 1、线性表 */,
 				040A7CBD273A17F9000E08EB /* 线性表-顺序存储结构 */,
+				040A7CC8273A201A000E08EB /* 线性表-链式存储结构 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +128,14 @@
 				040A7CBF273A17F9000E08EB /* main.c */,
 			);
 			path = "线性表-顺序存储结构";
+			sourceTree = "<group>";
+		};
+		040A7CC9273A201A000E08EB /* 线性表-链式存储结构 */ = {
+			isa = PBXGroup;
+			children = (
+				040A7CCA273A201A000E08EB /* main.c */,
+			);
+			path = "线性表-链式存储结构";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +192,23 @@
 			productReference = 040A7CBD273A17F9000E08EB /* 线性表-顺序存储结构 */;
 			productType = "com.apple.product-type.tool";
 		};
+		040A7CC7273A201A000E08EB /* 线性表-链式存储结构 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040A7CCC273A201A000E08EB /* Build configuration list for PBXNativeTarget "线性表-链式存储结构" */;
+			buildPhases = (
+				040A7CC4273A201A000E08EB /* Sources */,
+				040A7CC5273A201A000E08EB /* Frameworks */,
+				040A7CC6273A201A000E08EB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "线性表-链式存储结构";
+			productName = "线性表-链式存储结构";
+			productReference = 040A7CC8273A201A000E08EB /* 线性表-链式存储结构 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -179,6 +225,9 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					040A7CBC273A17F9000E08EB = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					040A7CC7273A201A000E08EB = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -199,6 +248,7 @@
 				040A7CA327394957000E08EB /* 数据结构 */,
 				040A7CB127394A70000E08EB /* 1、线性表 */,
 				040A7CBC273A17F9000E08EB /* 线性表-顺序存储结构 */,
+				040A7CC7273A201A000E08EB /* 线性表-链式存储结构 */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +274,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				040A7CC0273A17F9000E08EB /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040A7CC4273A201A000E08EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040A7CCB273A201A000E08EB /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +459,26 @@
 			};
 			name = Release;
 		};
+		040A7CCD273A201A000E08EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M95236MXVS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		040A7CCE273A201A000E08EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M95236MXVS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,6 +514,15 @@
 			buildConfigurations = (
 				040A7CC2273A17F9000E08EB /* Debug */,
 				040A7CC3273A17F9000E08EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040A7CCC273A201A000E08EB /* Build configuration list for PBXNativeTarget "线性表-链式存储结构" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040A7CCD273A201A000E08EB /* Debug */,
+				040A7CCE273A201A000E08EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
