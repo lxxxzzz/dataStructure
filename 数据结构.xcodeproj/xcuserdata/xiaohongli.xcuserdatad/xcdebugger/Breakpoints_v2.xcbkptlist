@@ -7,48 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D9C20A0-2C04-4021-96CE-A57551890E51"
+            uuid = "F424DDD7-8C95-408B-93F8-547C316C76E4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x7ebf;&#x6027;&#x8868;-&#x94fe;&#x5f0f;&#x5b58;&#x50a8;&#x7ed3;&#x6784;/main.c"
+            filePath = "&#x9759;&#x6001;&#x94fe;&#x8868;/main.c"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "main(argc, argv)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D69587A7-5F09-47D0-B6A8-8B05BDA7F67C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7ebf;&#x6027;&#x8868;-&#x94fe;&#x5f0f;&#x5b58;&#x50a8;&#x7ed3;&#x6784;/main.c"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "main(argc, argv)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FCBD75EA-2FC9-41F2-8A8C-C8B415000CB2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7ebf;&#x6027;&#x8868;-&#x94fe;&#x5f0f;&#x5b58;&#x50a8;&#x7ed3;&#x6784;/main.c"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "list_clear(list)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

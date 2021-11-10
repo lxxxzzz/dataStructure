@@ -154,6 +154,27 @@ void list_print(LinkList list) {
     printf("\n");
 }
 
+void list_reverse(LinkList *list) {
+    if (list == NULL) {
+        return;
+    }
+    
+    LinkList pre, p, latter;
+    pre = NULL;
+    p = (*list)->next;
+    latter = p->next;
+    while (p) {
+        p->next = pre;
+        pre = p;
+        p = latter;
+        if (p) {
+            latter = p->next;
+        }
+        
+    }
+    (*list)->next = pre;
+}
+
 Status list_clear(LinkList *list) {
     if (list == NULL) {
         return ERROR;
@@ -180,6 +201,9 @@ int main(int argc, const char * argv[]) {
     
     LinkList list;
     list_create(&list, a, len);
+    list_print(list);
+    
+    list_reverse(&list);
     list_print(list);
     
 //    list_insert(&list, 7, 'z');
