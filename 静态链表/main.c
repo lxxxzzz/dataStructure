@@ -39,23 +39,90 @@ int list_alloc(StaticLinkList space) {
     return i;
 }
 
-Status list_insert(StaticLinkList space, int i, ElemType e) {
-    int j;
-    j = list_alloc(space);
+Status list_free(StaticLinkList L, int i) {
+    // i = 4
+    if (i < 1 || i > MAXSIZE-1) {
+        return ERROR;
+    }
+    L[i].cur = L[0].cur;
+    L[0].cur = i;
+    return OK;
+}
+
+Status list_insert(StaticLinkList L, int i, ElemType e) {
+    int j, k, l;
+    k = MAXSIZE - 1;
+    
+    if (i < 1 || i > MAXSIZE) {
+        return ERROR;
+    }
+    
+    j = list_alloc(L);
     
     if (j) {
-        
+        L[j].data = e;
+        for (l = 1; l < i; l++) {
+            k = L[k].cur;
+        }
+        L[j].cur = L[k].cur;
+        L[k].cur = j;
+        return OK;
     }
     
     return ERROR;
 }
 
+Status list_delete(StaticLinkList L, int i) {
+    if (i < 1 || i > MAXSIZE) {
+        return ERROR;
+    }
+    int l, k;
+    k = MAXSIZE - 1;
+    for (l = 1; l < i; l++) {
+        k = L[k].cur;
+    }
+    L[k].cur = L[i].cur;
+    list_free(L, i);
+    return OK;
+}
+
+int list_len(StaticLinkList L) {
+    int cur, c;
+    cur = L[MAXSIZE-1].cur;
+    c = 0;
+    while (cur) {
+        c++;
+        cur = L[cur].cur;
+    }
+    return c;
+}
+
+void list_print(StaticLinkList L) {
+    int cur = L[MAXSIZE-1].cur;
+    while (cur) {
+        printf("%c", L[cur].data);
+        cur = L[cur].cur;
+    }
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
 
-    StaticLinkList space;
-    list_init(space);
+    StaticLinkList L;
+    list_init(L);
     
-    list_insert(space, 1, 'A');
+    int a[] = {'a', 'b', 'c', 'd', 'e'};
+    int len = sizeof(a) / sizeof(int);
+    for (int i=0; i<len; i++) {
+        list_insert(L, i + 1, a[i]);
+    }
+    list_print(L);
+    
+//    list_insert(L, 3, 'z');
+//    list_print(L);
+    
+    list_delete(L, 2);
+    list_print(L);
     
     return 0;
 }

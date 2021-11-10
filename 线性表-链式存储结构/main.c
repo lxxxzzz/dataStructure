@@ -175,6 +175,22 @@ void list_reverse(LinkList *list) {
     (*list)->next = pre;
 }
 
+Status list_search_center(LinkList list, LinkList *node) {
+    LinkList fast, slow;
+    fast = slow = list;
+    
+    while (fast) {
+        slow = slow->next;
+        fast = fast->next;
+        if (fast) {
+            fast = fast->next;
+        }
+    }
+    
+    *node = slow;
+    return OK;
+}
+
 Status list_clear(LinkList *list) {
     if (list == NULL) {
         return ERROR;
@@ -196,15 +212,19 @@ Status list_clear(LinkList *list) {
 
 int main(int argc, const char * argv[]) {
     
-    ElemType a[] = {'a', 'b', 'c', 'd', 'e', 'f'};
+    ElemType a[] = {'a', 'b', 'c', 'd', 'e', 'f', 'e'};
     int len = sizeof(a) / sizeof(ElemType);
     
     LinkList list;
     list_create(&list, a, len);
     list_print(list);
     
-    list_reverse(&list);
-    list_print(list);
+    LinkList node;
+    list_search_center(list, &node);
+    printf("%c", node->data);
+    
+//    list_reverse(&list);
+//    list_print(list);
     
 //    list_insert(&list, 7, 'z');
 //    list_print(list);
