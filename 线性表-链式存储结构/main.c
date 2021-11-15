@@ -77,8 +77,8 @@ Status list_delete(LinkList *list, int i, ElemType *e) {
         return ERROR;
     }
     
-    *e = p->data;
     q = p->next;
+    *e = q->data;
     p->next = p->next->next;
     
     free(q);
@@ -92,6 +92,7 @@ Status list_create(LinkList *list, ElemType a[], int len) {
     if (list == NULL) {
         return ERROR;
     }
+    (*list)->next = NULL;
     q = *list;
     
     for (int i=0; i<len; i++) {
@@ -155,24 +156,39 @@ void list_print(LinkList list) {
 }
 
 void list_reverse(LinkList *list) {
-    if (list == NULL) {
+    if (list == NULL || (*list)->next == NULL) {
         return;
     }
-    
-    LinkList pre, p, latter;
-    pre = NULL;
+    LinkList prev, p, latter;
+    prev = NULL;
     p = (*list)->next;
     latter = p->next;
     while (p) {
-        p->next = pre;
-        pre = p;
+        p->next = prev;
+        prev = p;
         p = latter;
         if (p) {
             latter = p->next;
         }
-        
     }
-    (*list)->next = pre;
+    (*list)->next = prev;
+}
+
+void list_recursion_reserve(LinkList *head) {
+    if (*head == NULL) {
+        return;
+    }
+    
+    LinkList first, rest;
+    first = *head;
+    rest = first->next;
+    if (rest == NULL) {
+        return;
+    }
+    list_recursion_reserve(&rest);
+    first->next->next = first;
+    first->next = NULL;
+    *head = rest;
 }
 
 Status list_search_center(LinkList list, LinkList *node) {
@@ -212,28 +228,38 @@ Status list_clear(LinkList *list) {
 
 int main(int argc, const char * argv[]) {
     
-    ElemType a[] = {'a', 'b', 'c', 'd', 'e', 'f', 'e'};
+    ElemType a[] = {'a', 'b', 'c', 'd', 'e', 'f'};
+//    ElemType a[] = {'a'};
     int len = sizeof(a) / sizeof(ElemType);
     
     LinkList list;
     list_create(&list, a, len);
     list_print(list);
     
-    LinkList node;
-    list_search_center(list, &node);
-    printf("%c", node->data);
+//    LinkList center;
+//    list_search_center(list, &center);
+//    printf("中间节点的值是->%c\n", center->data);
+    
+//    LinkList node;
+//    list_search_center(list, &node);
+//    printf("%c", node->data);
     
 //    list_reverse(&list);
+//    list_print(list);
+    
+//    list_recursion_reserve(&(list->next));
 //    list_print(list);
     
 //    list_insert(&list, 7, 'z');
 //    list_print(list);
     
-//    ElemType e;
-//    list_delete(&list, 10, &e);
-//    list_print(list);
-    
-    list_clear(&list);
+    ElemType e;
+    int i = 3;
+    list_delete(&list, i, &e);
+    printf("删除的第%d个元素是%c\n", i, e);
     list_print(list);
+    
+//    list_clear(&list);
+//    list_print(list);
     return 0;
 }

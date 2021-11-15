@@ -1,8 +1,8 @@
 //
 //  main.c
-//  静态链表
+//  线性表-静态链表
 //
-//  Created by 小红李 on 2021/11/9.
+//  Created by 小红李 on 2021/11/11.
 //
 
 #include <stdio.h>
