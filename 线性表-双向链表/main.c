@@ -115,7 +115,7 @@ int main(int argc, const char * argv[]) {
 //    list_delete(&L, i, &a);
 //    printf("删除的第%d个元素是%c\n", i , a);
 //    list_print(L);
-    printf("---------------\n");
+
     list_insert(&L, 2, 'z');
     list_print(L);
     
